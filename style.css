@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 :root
 {
     --clr-primary-black: #000000;
@@ -22,11 +24,6 @@
     --font-size-nav: var(--font-size-normal);
     --font-size-body: var(--font-size-normal);
     --font-size-footer: var(--font-size-xs);
-}
-
-@font-face {
-    font-family: Abstract;
-    src: url("font/fontawesome-webfont.woff2");
 }
 
 @media (min-width: 768px)
@@ -74,6 +71,7 @@ html,
 body
 {
     height: 100%;
+    font-family: "Lato", sans-serif;
 }
 
 /* Set core body defaults */
@@ -171,10 +169,11 @@ select {
 .containerNav
 {
     display: flex;
-    width: 100%;
+    width: 90%;
     height: 88px;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    margin-inline: auto;
     align-content: center;
 }
 
@@ -187,12 +186,47 @@ select {
     justify-content: center;
 }
 
-.company button
+.company
+{
+    align-self: center;
+}
+
+.company-button
+{
+    display: flex;
+    align-self: center;
+    width: 25%;
+    gap: 1rem;
+}
+
+.company-button button
 {
     width: 15rem;
     height: 3rem;
     border-radius: .4rem;
+    border: 2px solid transparent;
     cursor: pointer;
+}
+
+.company-button .button-Submit-Request
+{
+    border: 1px solid var(--clr-primary-white);
+    background-color: transparent;
+    flex: 85%;
+}
+
+.company-button .sign-In
+{
+    background-color: var(--clr-secondary-blue);
+    color: var(--clr-primary-white);
+    transition: .5s;
+}
+
+.company-button .sign-In:hover
+{
+    transition: .5s ease;
+    background-color: var(--clr-primary-white);
+    color: var(--clr-primary-black);
 }
 
 section .container-Header
@@ -203,6 +237,14 @@ section .container-Header
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-shadow:
+            0px 0px 2.2px rgba(0, 0, 0, 0.017),
+            0px 0px 5.3px rgba(0, 0, 0, 0.024),
+            0px 0px 10px rgba(0, 0, 0, 0.03),
+            0px 0px 17.9px rgba(0, 0, 0, 0.036),
+            0px 0px 33.4px rgba(0, 0, 0, 0.043),
+            0px 0px 80px rgba(0, 0, 0, 0.06)
+;
 }
 .container-Header h1
 {
@@ -211,100 +253,191 @@ section .container-Header
 .container-Header input
 {
     width: 50%;
-    height: 5rem;
+    height: 4rem;
     padding: 0 1rem;
     border: 1px solid var(--clr-primary-black);
     border-radius: 0.5rem;
+    box-shadow:
+            0px 0px 2.2px rgba(0, 0, 0, 0.017),
+            0px 0px 5.3px rgba(0, 0, 0, 0.024),
+            0px 0px 10px rgba(0, 0, 0, 0.03),
+            0px 0px 17.9px rgba(0, 0, 0, 0.036),
+            0px 0px 33.4px rgba(0, 0, 0, 0.043),
+            0px 0px 80px rgba(0, 0, 0, 0.06)
+;
 }
 
 .container-middle {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     width: 100%;
+    padding: 10rem 0;
 }
 
 .row {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 80%;
+    margin-bottom: 2rem;
 }
 
 .even-column {
-    width: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 45%;
+    padding: 10px;
+    border-radius: 8px;  /* Optional rounded corners for aesthetics */
+}
+
+.even-column img {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.text-content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.even-column h4, .even-column p, .even-column a {
-    margin: 10px 0; /* Adds spacing around text elements */
+.text-content h4, .text-content p, .text-content a {
+    margin: 5px 0;
+    font-size: var(--font-size-sm);
+}
+
+.text-content a {
+    color: var(--clr-secondary-blue);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.text-content a:hover {
+    text-decoration: underline;
+    color: var(--clr-secondary-blue);
 }
 
 
-footer .container-Footer
-{
+
+footer {
+    display: flex;
+    background-color: var(--clr-primary-black);
+    color: var(--clr-primary-white);
+    padding: 4rem 8rem;
+    font-size: var(--font-size-xs);
+}
+
+.container-Footer {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    width: 90%;
-    height: 30rem;
-    margin-inline: auto;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1920px;
+    margin: auto;
 }
 
-.container-Footer .footer-column
-{
+.footer-column,
+.footer-column-company {
     display: flex;
     flex-direction: column;
+    flex: 1 1 20%; /* Adjusts the basis and allows flexing */
+    min-width: 200px; /* Minimum width of each column to prevent squishing */
+    margin: 1rem;
+}
+
+.footer-column h3,
+.footer-column-company h3 {
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 1rem;
+}
+
+.footer-column ul,
+.footer-column-company ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column a,
+.footer-column-company a {
+    color: var(--clr-primary-white);
+    text-decoration: none;
+    line-height: 2;
+    font-weight: normal;
+}
+
+.footer-column a:hover,
+.footer-column-company a:hover {
+    text-decoration: underline;
+}
+
+.footer-contactUs {
+    margin-top: 2rem;
+}
+
+.footer-column-copyright {
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: flex-start;
     align-items: flex-start;
 }
 
-footer-column-copyright img
-{
-
-}
-
-
-/* General Styling */
-
-body
-{
-    font-size: var(--font-size-body);
-    font-family: var(--font-family-body);
-}
-
-.containerNav img,
+.company img,
 .footer-column-copyright img
 {
-    width: 10rem;
-    align-self: center;
-    justify-self: center;
+    width: 8rem;
+    cursor: pointer;
+    transition: .5s;
 }
 
-.button-Submit-Request
+.company img:hover
 {
-    background-color: transparent;
-    border: 1px solid var(--clr-primary-white);
+    opacity: 0.55;
+    transition: .7s ease;
 }
 
-.sign-In
-{
-    border: 1px solid transparent;
-    transition: .5s ease;
+@media (max-width: 768px) {
+    .container-Footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column,
+    .footer-column-company {
+        flex: 100%; /* Each column takes full width on smaller screens */
+        text-align: center;
+    }
 }
 
-.sign-In:hover
+
+@media (max-width: 1200px)
 {
-    background-color: var(--clr-primary-white);
-    color: var(--clr-primary-black);
-    transition: .5s ease;
+    .company-button
+    {
+        display: none;
+    }
 }
 
-.footer-column a
+
+@media (max-width: 430px)
 {
-    color: var(--clr-primary-white);
+    .container-Header h1
+    {
+        font-size: 4rem;
+    }
+    .even-column, .row
+    {
+        flex-direction: column;
+        width: 80%;
+        margin-inline: auto;
+    }
+    footer
+    {
+        justify-content: center;
+        align-items: center;
+    }
 }
 
