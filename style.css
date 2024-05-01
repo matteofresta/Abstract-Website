@@ -380,8 +380,8 @@ footer {
     margin-top: 10rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    align-self: flex-end;
+    justify-self: flex-end;
     align-items: flex-start;
 }
 
@@ -399,7 +399,15 @@ footer {
     transition: .7s ease;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px)
+{
+
+    .even-column, .row
+    {
+        flex-direction: column;
+        width: 80%;
+        margin-inline: auto;
+    }
     .container-Footer {
         flex-direction: column;
         align-items: center;
